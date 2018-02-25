@@ -1,0 +1,16 @@
+@font-face {
+	font-family: 'Ubuntu';
+	src: url('./ubuntuRegular.woff') format('woff'), url('./ubuntuRegular.woff2') format('woff2'), url('./ubuntuRegular.ttf') format('truetype');
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: 'Ubuntu';
+	src: url('./ubuntuBold.woff') format('woff'), url('./ubuntuBold.woff2') format('woff2'), url('./ubuntuBold.ttf') format('truetype');
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: 'Ubuntu Condensed';
+	src: url('./ubuntuCondensedRegular.ttf') format('truetype');
+}

@@ -1,0 +1,163 @@
+{
+	"ha": {
+		"palette": 1,
+		"sets": {
+			"M": {
+				"3092": {
+					"library": "hh_human_body",
+					"parts": [
+						{ "id": 1, "type": "bd" },
+						{ "id": 3, "type": "ey" },
+						{ "id": 1, "type": "fc" },
+						{ "id": 3, "type": "hd" },
+						{ "id": 1, "type": "lh" },
+						{ "id": 1, "type": "rh" }
+					]
+				}
+			}
+		}
+	},
+	"ca": {
+
+	},
+	"cc": {
+
+	},
+	"rh": {
+
+	},
+	"lh": {
+
+	},
+	"fc": {
+
+	},
+	"ey": {
+
+	},
+	"ch": {
+		"palette": 3,
+		"sets": {
+			"M": {
+				"25984": {
+					"library": "shirt_simple_stripe",
+					"parts": [
+						666,
+						667,
+						{ "id": "666", "type": "ls" },
+						{ "id": "666", "type": "rs" }
+					]
+				}
+			}
+		}
+	},
+	"ea": {
+		"palette": 1,
+		"sets": {
+			"M": {
+
+			},
+			"F": {
+
+			},
+			"U": {
+				"1404": {
+					"library": "hh_human_acc_eye",
+					"parts": [1, 2, 3, 4, 5, 6]
+				}
+			}
+		}
+	},
+	"fa": {
+		"palette": 3,
+		"sets": {
+			"U": {
+				"1201": {
+					"library": "hh_human_acc_face",
+					"parts": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+				}
+			}
+		}
+	},
+	"ha": {
+		"palette": 3,
+		"sets": {
+			"U": {
+				"3209": {
+					"library": "hat_U_straw",
+					"parts": [2345, 2346]
+				}
+			}
+		}
+	},
+	"hd": {
+		"palette": 1,
+		"sets": {
+			"U": {
+				"3092": {
+					"library": "hh_human_body",
+					"parts": [
+						1,
+						2,
+						3,
+						4,
+						{ "id": 1, "type": "bd" },
+						{ "id": 1, "type": "rh" },
+						{ "id": 1, "type": "lh" },
+						{ "id": 1, "type": "sd" },
+						{ "id": 999, "type": "bd" }
+					]
+				}
+			}
+		}
+	},
+	"he": {
+
+	},
+	"hr": {
+		"palette": 2,
+		"sets": {
+			"M": {
+				"72202184": {
+					"name": "hair_M_jimmy",
+					"parts": [
+						2476,
+						2477,
+						{ "id": 2476, "type": "hrb" }
+					]
+				}
+			},
+			"F": {
+
+			},
+			"U": {
+
+			}
+		}
+	},
+	"lg": {
+		"palette": 3,
+		"sets": {
+			"U": {
+				"280": {
+					"library": "hh_human_leg",
+					"parts": [1, 2, 3, 4, 5, 6, 7, 200, 201, 1007]
+				}
+			}
+		}
+	},
+	"sh": {
+		"palette": 3,
+		"sets": {
+			"U": {
+				"23512": {
+					"library": "hh_human_shoe",
+					"parts": [1, 2, 3, 4, 5, 6, 7, 8]
+				}
+			}
+		}
+	},
+	"wa": {
+
+	}
+}

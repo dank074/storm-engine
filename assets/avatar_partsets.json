@@ -1,0 +1,166 @@
+{
+    "partflips": {
+        "ri": "ri",
+        "rh": "lh",
+        "rhs": "lhs",
+        "rs": "ls",
+        "rc": "lc",
+        "bd": "bd",
+        "bds": "bds",
+        "ss": "ss",
+        "sh": "sh",
+        "lg": "lg",
+        "ch": "ch",
+        "cp": "cp",
+        "cc": "cc",
+        "hd": "hd",
+        "fc": "fc",
+        "ey": "ey",
+        "hr": "hr",
+        "hrb": "hrb",
+        "li": "li",
+        "lh": "rh",
+        "lhs": "rhs",
+        "ls": "rs",
+        "lc": "rc",
+        "wa": "wa",
+        "ea": "ea",
+        "ca": "ca",
+        "fa": "fa",
+        "ha": "ha",
+        "he": "he"
+    },
+    "activepart": {
+        "figure": [
+            "rh",
+            "rhs",
+            "rs",
+            "rc",
+            "bd",
+            "bds",
+            "ss",
+            "sh",
+            "lg",
+            "ch",
+            "cp",
+            "cc",
+            "wa",
+            "hd",
+            "fc",
+            "ey",
+            "hr",
+            "hrb",
+            "lh",
+            "lhs",
+            "ls",
+            "lc",
+            "ea",
+            "ca",
+            "fa",
+            "ha",
+            "he",
+            "ri",
+            "li"
+        ],
+        "head": [
+            "hd",
+            "fc",
+            "ey",
+            "hr",
+            "hrb",
+            "ea",
+            "fa",
+            "ha",
+            "he"
+        ],
+        "speak": [
+            "hd",
+            "hr",
+            "hrb",
+            "fc",
+            "fa",
+            "ha"
+        ],
+        "gesture": [
+            "ey",
+            "fc"
+        ],
+        "eye": [
+            "ey"
+        ],
+        "handRight": [
+            "rh",
+            "rhs",
+            "rs",
+            "rc",
+            "ri"
+        ],
+        "handRightAndHead": [
+            "rh",
+            "rhs",
+            "rs",
+            "rc",
+            "ri",
+            "ey",
+            "fc",
+            "hd"
+        ],
+        "handLeft": [
+            "lh",
+            "lhs",
+            "ls",
+            "lc",
+            "li"
+        ],
+        "walk": [
+            "bd",
+            "bds",
+            "ss",
+            "lg",
+            "lh",
+            "lhs",
+            "rh",
+            "rhs",
+            "ls",
+            "lc",
+            "rs",
+            "rc",
+            "sh"
+        ],
+        "sit": [
+            "bd",
+            "bds",
+            "ss",
+            "lg",
+            "sh",
+            "cc"
+        ],
+        "itemRight": [
+            "ri"
+        ],
+        "swim": [
+            "bds",
+            "ss",
+            "lhs",
+            "rhs"
+        ],
+        "snowwarrun": [
+            "ch"
+        ],
+        "snowwarpick": [
+            "ch",
+            "hd"
+        ],
+        "snowwardiefront": [
+            "ch",
+            "hd"
+        ],
+        "snowwardieback": [
+            "ch",
+            "hd"
+        ],
+        "snowwarthrow": [
+            "ch"
+        ]
+    }
+}

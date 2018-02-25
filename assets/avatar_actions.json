@@ -1,0 +1,138 @@
+{
+	"bd": [
+		"std",
+		"lay",
+		"wlk"
+	],
+	"hd": [
+		"std",
+		"lsp",
+		"lay",
+		"spk"
+	],
+	"fa": [
+		"std",
+		"spk",
+		"lsp",
+		"lay"
+	],
+	"ea": [
+		"std",
+		"lay"
+	],
+	"ey": [
+		"std",
+		"agr",
+		"sad",
+		"sml",
+		"srp",
+		"lag",
+		"lsp",
+		"lay",
+		"eyeb"
+	],
+	"fc": [
+		"std",
+		"agr",
+		"blw",
+		"sad",
+		"spk",
+		"srp",
+		"sml",
+		"lsp",
+		"lay"
+	],
+	"hr": [
+		"std",
+		"lay"
+	],
+	"hrb": [
+		"std",
+		"lay"
+	],
+	"he": [
+		"std",
+		"lay"
+	],
+	"ha": [
+		"std",
+		"lay"
+	],
+	"ch": [
+		"std",
+		"lay"
+	],
+	"cc": [
+		"std",
+		"lay"
+	],
+	"ca": [
+		"std",
+		"lay"
+	],
+	"lg": [
+		"std",
+		"sit",
+		"wlk",
+		"lay"
+	],
+	"lh": [
+		"std",
+		"respect",
+		"sig",
+		"wav",
+		"wlk",
+		"lay"
+	],
+	"ls": [
+		"std",
+		"wav",
+		"wlk",
+		"lay"
+	],
+	"lc": [
+		"std",
+		"wav",
+		"wlk",
+		"lay"
+	],
+	"rh": [
+		"std",
+		"blw",
+		"drk",
+		"crr",
+		"wlk",
+		"lay"
+	],
+	"rs": [
+		"std",
+		"blw",
+		"drk",
+		"crr",
+		"wlk",
+		"lay"
+	],
+	"rc": [
+		"std",
+		"blw",
+		"drk",
+		"crr",
+		"wlk",
+		"lay"
+	],
+	"ri": [
+		"std",
+		"crr",
+		"drk"
+	],
+	"li": [
+		"std",
+		"sig"
+	],
+	"sh": [
+		"std",
+		"sit",
+		"wlk",
+		"lay"
+	]
+}

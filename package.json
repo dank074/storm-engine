@@ -1,0 +1,19 @@
+{
+  "name": "storm-engine",
+  "version": "1.0.0",
+  "description": "storm-engine",
+  "main": "bin",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcus-sa/storm-engine.git"
+  },
+  "author": "Marcus S. Abildskov",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/marcus-sa/storm-engine/issues"
+  },
+  "homepage": "https://github.com/marcus-sa/storm-engine#readme"
+}

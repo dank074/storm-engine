@@ -1,0 +1,61 @@
+{
+	"hotelview": [
+		"background",
+		"background_left",
+		"reception_logo",
+		"gradient"
+	],
+	"room": {
+		"tile": [
+			"b",
+			"bordered",
+			"outline",
+			"t",
+			"t2",
+			"default"
+		]
+	},
+	"gui": {
+		"logo": [
+			"small",
+			"medium",
+			"large"
+		],
+		"home": [
+			"small",
+			"medium",
+			"large"
+		],
+		"shop": [
+			"small"
+		],
+		"stuff": [
+			"small"
+		],
+		"friends": [
+			"small"
+		],
+		"camera": [
+			"small"
+		],
+		"builder": [
+			"small",
+			"medium",
+			"large"
+		],
+		"navigator": [
+			"small"
+		],
+		"user": {
+			"achievements": [
+				"small",
+				"medium",
+				"large"
+			],
+			"talents": [
+				"small",
+				"large"
+			]
+		}
+	}
+}
