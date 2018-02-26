@@ -4,13 +4,6 @@ export default class Storage extends LocalForage {
 
   _cache = {}
 
-  /*constructor(options) {
-    Object.assign(this.localForage)
-    this.localForage = localForage.createInstance(options)
-
-    return this
-  }*/
-
   async get(key) {
     if (this._cache[key]) return this._cache[key]
 

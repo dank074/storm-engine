@@ -103,13 +103,6 @@ export default class GameClient {
 
 			// Firefox Quantum doesn't completely support WebGL yet
 			this.renderer = PIXI.autoDetectRenderer(rendererOptions)
-			/*if (/firefox/i.test(navigator.userAgent)) {
-				this.renderer = new PIXI.CanvasRenderer(rendererOptions)
-			} else {
-				this.renderer = new PIXI.WebGLRenderer(rendererOptions)
-			}
-
-			container.appendChild(this.renderer.view)*/
 
 			this.storage = new Storage(options.storage)
 			this.world = new PIXI.Container()
@@ -122,26 +115,12 @@ export default class GameClient {
 				console.info('Socket connected')
 
 				Game.start()
-				//this.render()
 			})
 
 			this.socket.on('error', console.error)
 			this.socket.on('connect_timeout', console.error)
 			this.socket.on('connect_error', console.error)
-
-			//window.addEventListener('resize', this.resize)
 		}
 	}
-
-	/*resize = () => {
-		this.renderer.view.style.width = '100vw'//`${window.innerWidth}px`
-		this.renderer.view.style.height = '100vh'//`${window.innerHeight}px`
-	}
-
-  render = () => {
-    this.renderer.render(this.world)
-
-    window.requestAnimationFrame(this.render)
-  }*/
 
 }

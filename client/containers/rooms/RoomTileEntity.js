@@ -1,6 +1,6 @@
 export default class RoomTileEntity extends PIXI.Graphics {
 
-  cacheBitMap = true
+  interactive = true
 
   _width = 64
   _height = 32
@@ -16,6 +16,7 @@ export default class RoomTileEntity extends PIXI.Graphics {
     }
 
     this.draw()
+    this.cacheBitMap = true
   }
 
   _divide(i) {

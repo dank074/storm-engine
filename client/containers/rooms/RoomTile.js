@@ -2,8 +2,6 @@ import RoomTileEntity from './RoomTileEntity'
 
 export default class RoomTile extends RoomTileEntity {
 
-  interactive = true
-
   draw() {
     const { X, Y } = this._start = this._getStart(this._pos)
 

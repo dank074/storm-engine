@@ -1,7 +1,12 @@
+import Mousetrap from 'mousetrap'
+
 import { Room } from './containers/rooms'
 import { AssetsLoader } from './lib'
 
 export default new class Game {
+
+  removedActions = []
+  storedActions = []
 
   setup({ storage, store, config, socket, world, renderer }) {
 		this.storage = storage
@@ -11,6 +16,33 @@ export default new class Game {
 		this.world = world
 		this.renderer = renderer
 	}
+
+  _addInteractions() {
+    Mousetrap.bind('shift+z', this.undoLastAction)
+    Mousetrap.bind('shift+y', this.redoLastAction)
+  }
+
+  undoLastAction = (e) => {
+    const action = this.storedActions.pop()
+
+    if (action) {
+      action.undo(e)
+      this.removedActions.push(action)
+    }
+
+    return false
+  }
+
+  redoLastAction = (e) => {
+    const action = this.removedActions.pop()
+
+    if (action) {
+      action.redo(e)
+      this.storedActions.push(action)
+    }
+
+    return false
+  }
 
 	start() {
 		const { socket, config, store: { loadingScreen, gui, hotelView } } = this
@@ -32,6 +64,8 @@ export default new class Game {
 					// Wait until progress bar has transitioned
 					setTimeout(async () => {
 						gui.render()
+
+            this._addInteractions()
 
 						if (config.room || user.home_room) {
 							await Room.join(config.room || user.home_room)

@@ -1,9 +1,9 @@
 import _ from 'lodash'
+import Mousetrap from 'mousetrap'
 
 import Game from '../../Game'
 
-import RoomStairsLeft from './Stairs/Left'
-import RoomStairsRight from './Stairs/Right'
+import * as RoomStairs from './Stairs'
 import RoomTile from './RoomTile'
 
 export default class RoomFloor extends PIXI.Container {
@@ -23,11 +23,11 @@ export default class RoomFloor extends PIXI.Container {
 
   _createTile(type, tile) {
     switch (type) {
-      case 'ROOM_STAIRS_RIGHT':
-        return new RoomStairsRight(this._thickness, tile)
+      case 'ROOM_STAIRS_NORTH_EAST':
+        return new RoomStairs.NorthEast(this._thickness, tile)
 
-      case 'ROOM_STAIRS_LEFT':
-        return new RoomStairsLeft(this._thickness, tile)
+      case 'ROOM_STAIRS_NORTH_WEST':
+        return new RoomStairs.NorthWest(this._thickness, tile)
 
       default:
         return new RoomTile(this._thickness, tile)
@@ -38,14 +38,18 @@ export default class RoomFloor extends PIXI.Container {
     const zIndex = (tile[2] || 0) + 1
 
     if (this.validTile([tile[0] - 1, tile[1], zIndex])) {
-      return 'ROOM_STAIRS_RIGHT'
+      return 'ROOM_STAIRS_NORTH_EAST'
     }
 
     if (this.validTile([tile[0], tile[1] - 1, zIndex])) {
-      return 'ROOM_STAIRS_LEFT'
+      return 'ROOM_STAIRS_NORTH_WEST'
     }
 
     return 'ROOM_TILE'
+  }
+
+  _addInteractions() {
+
   }
 
   draw() {
@@ -59,24 +63,24 @@ export default class RoomFloor extends PIXI.Container {
       this.addChild(roomTile)
 
       roomTile.mouseover = (e) => {
-        console.log(roomTile)
         this._tileOutline.visible = true
-        this._tileOutline.position.set(roomTile._start.X, roomTile._start.Y + 13.5) // 8 pixels above
-      }
-
-      roomTile.mouseout = (e) => {
-
-        //this._tileOutline.visible = false
+        this._tileOutline.position.set(roomTile._start.X, roomTile._start.Y + 13.5)
       }
 
       roomTile.click = (e) => {
-        roomTile.visible = !roomTile.visible
-        //Game.store.user.avatar.move(roomTile)
-        //console.info(roomTile.pos)
+        this._tileOutline.visible = false
+        roomTile.visible = false
+
+        Game.storedActions.push({
+          redo: (e) => roomTile.visible = false,
+          undo: (e) => roomTile.visible = true
+        })
       }
     })
 
     this.position.set(Game.renderer.width / 2, Game.renderer.height / 2)
+
+    this._addInteractions()
 
     this.addChild(this._tileOutline)
   }

@@ -94,9 +94,11 @@ export default new class Room {
 
 	addToCamera() {
 		//this.renderer.displayList = new PIXI.DisplayList()
+		// this.createWalls()
 		this.createFloor()
-
-	//	this.addAvatars()
+		// this.createFurni()
+		// this.createAvatars()
+		
 		this.setupHandlers()
 
 		Game.renderer.backgroundColor = '#000000'

@@ -1,26 +1,25 @@
+import Mousetrap from 'mousetrap'
+
 import Game from '../Game'
 
 export default class Camera {
 
-	view: Object
-	room: Object
+	_zoomLevel = 1
 
 	constructor() {
 		this.view = new PIXI.Container()
 		this.view.interactive = true
 
 		this.view.hitArea = new PIXI.Rectangle(0, 0, Game.renderer.width, Game.renderer.height)
-
-		//document.addEventListener('mousewheel') // zoom effect
 	}
 
-	render(room: Object) {
+	render(room) {
 		this.room = room
 
-		this.view.position.copy(room.position) //.set(room.position.x, room.position.y)
+		this.view.position.copy(room.position)
 
 		this.view.addChild(room)
-		this.addInteractions()
+		this._addInteractions()
 
 		Game.world.addChild(this.view)
 	}
@@ -29,8 +28,48 @@ export default class Camera {
 		Game.world.removeChild(this.view)
 	}
 
-	addInteractions() {
+	_setZoomLevel(action) {
+		switch (action) {
+			case 'in':
+				return this._zoomLevel += 0.1
+
+			case 'out':
+				return this._zoomLevel -= 0.1
+
+			case 'reset':
+				return this._zoomLevel = 1
+		}
+	}
+
+	_zoom = (action) => {
+		return (e) => {
+			const zoomLevel = this._setZoomLevel(action)
+
+			this.room.scale.set(zoomLevel)
+			// @TODO: Fix positioning depending on scale level
+			// so that the room stays in center when zooming
+			this.room.position.set(
+				this.room.position.x / zoomLevel,
+				this.room.position.y / zoomLevel
+			)
+
+			return false
+		}
+	}
+
+	_cameraReset = () => {
+		this.room.position.set(0, 0)
+
+		return false
+	}
+
+	_addInteractions() {
 		this.room.interactive = true
+
+		Mousetrap.bind(['ctrl+z+up','command+z+up'], this._zoom('in'))
+		Mousetrap.bind(['ctrl+z+down', 'command+z+down'], this._zoom('out'))
+		Mousetrap.bind(['ctrl+shift+z', 'command+shift+z'], this._zoom('reset'))
+		Mousetrap.bind(['ctrl+shift+c', 'command+shift+c'], this._cameraReset)
 
 		this.view
 			.on('pointerdown', this.onDragStart)
@@ -41,8 +80,6 @@ export default class Camera {
 
 	onDragStart = (event) => {
    	const { room } = this
-
-		console.log('onDragStart')
 
 		room.dragData = event.data
 		room.dragging = true

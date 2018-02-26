@@ -22,7 +22,6 @@ export default ({ theme, dev, container }, store) => {
   `
 
   container.appendChild(dest)
-  //container.insertAdjacentElement('afterbegin', dest)
 
   ReactDOM.render(
     <AppContainer>
