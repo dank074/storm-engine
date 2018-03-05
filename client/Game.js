@@ -5,6 +5,7 @@ import { AssetsLoader } from './lib'
 
 export default new class Game {
 
+  resources = {}
   removedActions = []
   storedActions = []
 
@@ -49,6 +50,7 @@ export default new class Game {
 		// Render loading screen
 		// Authenticate user while rendering loading screen
 		socket.emit('users/login', config.authTicket, (user) => {
+      console.warn(user)
 			this.store.user.set(user)
 			// Preload assets before game is rendered
 			new AssetsLoader()
@@ -58,8 +60,6 @@ export default new class Game {
 					loadingScreen.updateProgress(progress)
 				})
 				.complete(resources => {
-					this.resources = resources
-
 					Room.init()
 					// Wait until progress bar has transitioned
 					setTimeout(async () => {

@@ -1,5 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { observer, inject } from 'mobx-react'
+
+import { HotelView } from '../../containers'
+
+//import UserInterface from './UI'
 
 @inject(store => ({
   user: store.user.info,
@@ -12,9 +16,10 @@ export default class Overlay extends Component {
     const { user, active, children } = this.props
 
     return active ? (
-      <div>
-        {children}
-      </div>
+      <Fragment>
+        <HotelView />
+        {/*<UserInterface />*/}
+      </Fragment>
     ) : null
   }
 

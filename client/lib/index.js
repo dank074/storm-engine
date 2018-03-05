@@ -1,4 +1,5 @@
 export AssetsLoader from './AssetsLoader'
+export Furni from './Furni'
 export Camera from './Camera'
 export Avatar from './Avatar'
 export Storage from './Storage'

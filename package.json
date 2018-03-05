@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/marcus-sa/storm-engine/issues"
   },
-  "homepage": "https://github.com/marcus-sa/storm-engine#readme"
+  "homepage": "https://github.com/marcus-sa/storm-engine#readme",
+  "dependencies": {
+    "socket.io": "^2.0.4"
+  }
 }

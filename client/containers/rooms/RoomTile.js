@@ -3,7 +3,7 @@ import RoomTileEntity from './RoomTileEntity'
 export default class RoomTile extends RoomTileEntity {
 
   draw() {
-    const { X, Y } = this._start = this._getStart(this._pos)
+    const { X, Y } = this._start = this._getPosition(this._pos)
 
     const points = []
 

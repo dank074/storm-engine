@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import Helmet from 'react-helmet'
 import ReactDOM from 'react-dom'
 import { Provider } from 'mobx-react'
 import DevTools from 'mobx-react-devtools'
@@ -12,7 +13,7 @@ const defaultTheme = {
   color: 'blue'
 }
 
-export default ({ theme, dev, container }, store) => {
+export default ({ assetsUrl, theme, dev, container }, store) => {
   const dest = document.createElement('div')
   dest.style.cssText = `
     height: 100%;
@@ -28,10 +29,12 @@ export default ({ theme, dev, container }, store) => {
       <Provider {...store}>
         <ThemeProvider theme={theme || defaultTheme}>
           <Renderer>
+            <Helmet>
+              <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" />
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.css" />
+            </Helmet>
             <LoadingScreen />
-            <Overlay>
-              <HotelView />
-            </Overlay>
+            <Overlay />
           </Renderer>
         </ThemeProvider>
       </Provider>

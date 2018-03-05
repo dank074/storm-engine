@@ -3,7 +3,7 @@ import RoomTileEntity from '../RoomTileEntity'
 export default class RoomStairsNorthEast extends RoomTileEntity {
 
   draw() {
-    this._start = this._getStart(this._pos)
+    this._start = this._getPosition(this._pos)
 
     const points = []
 
@@ -14,7 +14,7 @@ export default class RoomStairsNorthEast extends RoomTileEntity {
       const y = this._pos.y
       const z = (this._pos.z || 0) + this._divide(i)
 
-      const start = this._getStart({ x, y, z })
+      const start = this._getPosition({ x, y, z })
 
       points[i].push({ x: start.X, y: start.Y })
       points[i].push({ x: start.X - this._width / 8, y: start.Y + this._height / 8 })

@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 import * as utils from '../../utils'
 
 import Game from '../Game'
@@ -36,6 +38,7 @@ export default class AssetsHandler {
   }
 
   loaderAdd = (resource: Array) => {
+    console.log(resource)
     if (utils.isObject(resource)) {
       // No reason to validate if its being run in production
       if (Game.config.dev) {
@@ -51,7 +54,7 @@ export default class AssetsHandler {
         })
       }
 
-      this.loader.add(resource.name, this.parsePath(undefined, resource.url))
+      this.loader.add(resource.name, this.parsePath(null, resource.url))
     } else {
       this.loader.add(resource, this.parsePath(resource))
     }
@@ -77,6 +80,8 @@ export default class AssetsHandler {
     this.loader.load((loader, resources) => {
       this.finished = true
 
+      Game.resources = _.merge({}, Game.resources, resources)
+
       callback(resources, loader)
     })
 
@@ -84,7 +89,7 @@ export default class AssetsHandler {
   }
 
   parsePath(src: String, url: String, ext: String = '.png') {
-    const gamePath = `//${Game.config.host}:${Game.config.port}/`
+    const gamePath = `${Game.config.assetsUrl}/`
     let fullPath = gamePath + (url ? url : 'images/')
 
     if (!url) {

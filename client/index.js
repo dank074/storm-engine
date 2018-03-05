@@ -31,6 +31,10 @@ export default class GameClient {
 					type: 'string',
 					default: '//127.0.0.1:30000'
 				},
+				assetsUrl: {
+					type: 'string',
+					default: '//127.0.0.1:3000'
+				},
 				secure: {
 					type: 'boolean',
 					default: false
@@ -66,7 +70,7 @@ export default class GameClient {
 				}
 			})
 
-			const { authTicket, secure, host, port, container, backgroundColor, resolution, height, width } = this.config
+			const { assetsUrl, authTicket, secure, host, port, container, backgroundColor, resolution, height, width } = this.config
 
 			container.style.cssText = `
 			  height: 100vh;
@@ -85,19 +89,19 @@ export default class GameClient {
 				reconnect: true
 			})
 
-			require('webfontloader').load({
+			/*require('webfontloader').load({
 				custom: {
 					families: ['Ubuntu', 'Ubuntu Condensed'],
-					urls: [`//${host}:${port}/fonts/fonts.css`]
+					urls: [`${assetsUrl}/fonts/fonts.css`]
 				}
-			})
+			})*/
 
       const rendererOptions = {
         antialias: true,
         legacy: true,
         width,
         height,
-        backgroundColor,
+        backgroundColor: 0xFFFFFF,
         resolution
       }
 

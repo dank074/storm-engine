@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { observer, inject } from 'mobx-react'
 
 import * as utils from '../../../utils'
-import Game from '../../Game'
+import { config } from '../../Game'
 
 import { Image, Progress, Message, Container } from './styled'
 
@@ -21,9 +21,9 @@ export default class LoadingScreen extends Component {
 
     return active ? (
       <Container>
-        <Image.Stack src={`//${Game.config.url}/images/loading/stack.png`}>
-          <Image.Photo src={`//${Game.config.url}/images/loading/photos/${this.randomPhoto}.png`} />
-          <Image.Frame src={`//${Game.config.url}/images/loading/frame.png`} />
+        <Image.Stack src={`${config.assetsUrl}/images/loading/stack.png`}>
+          <Image.Photo src={`${config.assetsUrl}/images/loading/photos/${this.randomPhoto}.png`} />
+          <Image.Frame src={`${config.assetsUrl}/images/loading/frame.png`} />
         </Image.Stack>
         <Message>
           I like your t-shirt, uziboozy

@@ -1,6 +1,7 @@
 import { Camera, Avatar } from '../../lib'
 
-import RoomFloor from './Floor'
+import RoomFurni from './RoomFurni'
+import RoomFloor from './RoomFloor'
 import Game from '../../Game'
 
 export default new class Room {
@@ -32,10 +33,12 @@ export default new class Room {
 
 			Game.socket.emit('rooms/join', roomId, (room) => {
 				this.data = room
+				this.data.floor = JSON.parse(room.floor)
+				
 				resolve(room)
 
 				// determine if locked or password protected ??
-				switch (room.state) {
+				switch (room) {
 					case 'locked': {
 						// locked
 					}
@@ -95,15 +98,24 @@ export default new class Room {
 	addToCamera() {
 		//this.renderer.displayList = new PIXI.DisplayList()
 		// this.createWalls()
+		Game.renderer.mouseover = () => this.floor.tileOutline.visible = false
 		this.createFloor()
-		// this.createFurni()
+		this.createFurni()
 		// this.createAvatars()
-		
+
 		this.setupHandlers()
 
-		Game.renderer.backgroundColor = '#000000'
+		Game.renderer.backgroundColor = 0x212226
 
 		this.camera.render(this.view)
+	}
+
+	createFurni() {
+		if (this.furni) this.furni.destroy(false)
+		this.furni = new RoomFurni(this.floor, this.data)
+
+		this.furni.draw()
+		this.view.addChild(this.furni)
 	}
 
 	createFloor() {

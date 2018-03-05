@@ -1,9 +1,8 @@
-export default class RoomTileEntity extends PIXI.Graphics {
+import RoomEntity from './RoomEntity'
+
+export default class RoomTileEntity extends RoomEntity {
 
   interactive = true
-
-  _width = 64
-  _height = 32
 
   constructor(thickness, tile) {
     super()
@@ -18,26 +17,6 @@ export default class RoomTileEntity extends PIXI.Graphics {
     this.draw()
     this.cacheBitMap = true
   }
-
-  _divide(i) {
-    switch (i) {
-      case 1:
-        return 0
-      case 2:
-        return 0.25
-      case 3:
-        return 0.50
-      case 4:
-        return 0.75
-      default:
-        return i
-    }
-  }
-
-  _getStart = ({ x, y, z }) => ({
-    X: (y * 32) - (x * 32),
-    Y: (y * 16) + (x * 16) - (z * 32)
-  })
 
   _drawThickness(first, second, third, fourth) {
     if (this._thickness > 0) {
