@@ -1,0 +1,61 @@
+{
+  "name": "storm-engine-client",
+  "version": "0.0.1",
+  "description": "storm-engine",
+  "main": "bin",
+  "scripts": {
+    "dev": "node --trace-warnings webpack/webpack-dev-server",
+    "compile": "webpack webpack/config/production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcus-sa/storm-engine.git"
+  },
+  "author": "Marcus S. Abildskov",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/marcus-sa/storm-engine/issues"
+  },
+  "homepage": "https://github.com/marcus-sa/storm-engine#readme",
+  "dependencies": {
+    "lodash": "^4.17.5",
+    "mousetrap": "^1.6.1",
+    "pixi.js": "^4.7.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-helmet": "^5.2.0",
+    "react-hot-loader": "^4.0.0",
+    "socket.io-client": "^2.0.4"
+  },
+  "devDependencies": {
+    "express": "*",
+    "webpack-dev-middleware": "*",
+    "webpack-hot-middleware": "*",
+    "webpack": "*",
+    "babel-plugin-transform-runtime": "*",
+    "babel-plugin-add-module-exports": "*",
+    "babel-plugin-transform-decorators-legacy": "*",
+    "babel-preset-react": "*",
+    "babel-preset-env": "*",
+    "babel-preset-stage-0": "*",
+    "babel-plugin-transform-react-jsx-source": "*",
+    "babel-plugin-transform-class-properties": "*",
+    "babel-core": "*",
+    "babel-polyfill": "*",
+    "babel-loader": "*",
+    "react-hot-loader": "*",
+    "json-loader": "*"
+  },
+  "keywords": [
+    "Habbo5",
+    "HTML5",
+    "Mobx",
+    "React",
+    "Habbo",
+    "Pixi.js"
+  ],
+  "devConfig": {
+    "host": "localhost",
+    "port": 8000
+  }
+}

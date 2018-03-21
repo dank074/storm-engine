@@ -3,7 +3,7 @@ import { observer, inject } from 'mobx-react'
 
 import { HotelView } from '../../containers'
 
-//import UserInterface from './UI'
+import UserInterface from './UI'
 
 @inject(store => ({
   user: store.user.info,
@@ -18,7 +18,7 @@ export default class Overlay extends Component {
     return active ? (
       <Fragment>
         <HotelView />
-        {/*<UserInterface />*/}
+        <UserInterface />
       </Fragment>
     ) : null
   }

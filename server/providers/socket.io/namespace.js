@@ -31,16 +31,16 @@ module.exports = class Namespace {
     this._middleware.forEach(middleware => this.io.use(...middleware))
 
     this.io.on('connection', (socket) => {
+      socket.io = this.io
+      socket.updateAttributes = function (attributes) {
+        socket.session = _.merge({}, socket.session, attributes)
+      }
+
       Object.keys(this._channels).forEach(name => {
         const closure = this._channels[name].split('.')
 
         const Channel = this._ioc.use(closure[0])
         const channel = new Channel(this.io, socket)
-
-        socket.io = this.io
-        socket.updateAttributes = function (attributes) {
-          socket.session = _.merge({}, socket.session, attributes)
-        }
 
         if (closure.length > 1) {
           const method = channel[closure[1]]

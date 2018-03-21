@@ -1,6 +1,10 @@
 import React, { Component, Fragment } from 'react'
+import Helmet from 'react-helmet'
 
 import Game from '../Game'
+
+import { Overlay } from '../components'
+import { LoadingScreen, HotelView, Renderer } from './'
 
 export default class Renderer extends Component {
 
@@ -24,7 +28,12 @@ export default class Renderer extends Component {
 
   render = () => (
     <Fragment>
-      {this.props.children}
+      <Helmet>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.css" />
+      </Helmet>
+      <LoadingScreen />
+      <Overlay />
       <div ref="game-container" />
     </Fragment>
   )
