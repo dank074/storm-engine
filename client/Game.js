@@ -61,6 +61,7 @@ export default new class Game {
 				})
 				.complete(resources => {
 					Room.init()
+          
 					// Wait until progress bar has transitioned
 					setTimeout(async () => {
 						gui.render()

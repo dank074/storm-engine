@@ -27,7 +27,10 @@ module.exports = class extends Channel {
         .where('room_items.roomId', room.id)
 
       this.io.sockets.in(roomId).clients((err, users) => {
-        if (err) return Logger.error(err)
+        if (err) {
+          Logger.error(err)
+          return done(err)
+        }
 
         this.broadcast.to(roomId).emit('rooms/join', this.session.user)
         this.join(roomId)
